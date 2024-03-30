@@ -1,15 +1,17 @@
 import About from './About';
-import Contact from './Contact';
+import CanvasContainer from './CanvasContainer';
 import Introduction from './Introduction';
 
-const App = () => {
+function App() {
 	return (
-		<section className="container grid gap-4">
+		<div className="container">
 			<Introduction />
+			<div className="canvas-container h-screen">
+				<CanvasContainer />I
+			</div>
 			<About />
-			<Contact />
-		</section>
+		</div>
 	);
-};
+}
 
 export default App;

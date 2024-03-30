@@ -1,4 +1,4 @@
-const Contact = () => {
+const About = () => {
 	return (
 		<section className="h-screen grid place-content-center gap-4">
 			<h2 className="text-center">Contact</h2>
