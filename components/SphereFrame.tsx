@@ -22,10 +22,11 @@ const SphereFrame = () => {
 
 	return (
 		<mesh ref={sphereRef}>
+			<ambientLight intensity={0.5} />
 			<Sphere args={[1, 32, 32]}>
 				<meshPhongMaterial
 					attach="material"
-					color="#3f583f"
+					color="#00ff00"
 				/>
 			</Sphere>
 		</mesh>
