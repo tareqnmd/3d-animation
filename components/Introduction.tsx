@@ -1,6 +1,35 @@
+'use client';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { useRef } from 'react';
+
 const Introduction = () => {
+	const introductionRef: any = useRef();
+	useGSAP(
+		() => {
+			const item: any = introductionRef.current;
+			const t1 = gsap.timeline({
+				scrollTrigger: {
+					trigger: item,
+					start: 'top center',
+					end: 'bottom center',
+					scrub: 1,
+				},
+			});
+			t1.from(item, {
+				opacity: 0.2,
+				y: -100,
+				duration: 1,
+			});
+		},
+		{ scope: introductionRef }
+	);
+
 	return (
-		<section className="h-screen grid place-content-center gap-4">
+		<section
+			ref={introductionRef}
+			className="h-screen grid place-content-center gap-4"
+		>
 			<h2 className="text-center">Introduction</h2>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
