@@ -21,14 +21,11 @@ const SphereFrame = () => {
 	});
 
 	return (
-		<mesh>
-			<Sphere
-				args={[1, 32, 32]}
-				ref={sphereRef}
-			>
+		<mesh ref={sphereRef}>
+			<Sphere args={[1, 32, 32]}>
 				<meshPhongMaterial
 					attach="material"
-					color="#00ff00"
+					color="#3f583f"
 				/>
 			</Sphere>
 		</mesh>

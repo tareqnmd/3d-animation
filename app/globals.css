@@ -2,17 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.app-header {
-	background-color: #282c34;
-	padding: 1rem;
-	text-align: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+.app-content {
+	position: relative;
+	z-index: 11;
 }
 
-.canvas-container {
+.app-canvas {
 	position: fixed;
 	overflow: hidden;
 	height: 100dvh;
 	width: -webkit-fill-available;
+	z-index: 10;
 }

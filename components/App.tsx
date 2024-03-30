@@ -6,7 +6,7 @@ function App() {
 	return (
 		<>
 			<CanvasContainer />
-			<div className="container">
+			<div className="app-content container">
 				<Introduction />
 				<About />
 			</div>

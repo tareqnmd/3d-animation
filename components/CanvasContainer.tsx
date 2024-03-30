@@ -4,7 +4,7 @@ import SphereFrame from './SphereFrame';
 
 const CanvasContainer = () => {
 	return (
-		<div className="canvas-container">
+		<div className="app-canvas">
 			<Canvas>
 				<SphereFrame />
 			</Canvas>
