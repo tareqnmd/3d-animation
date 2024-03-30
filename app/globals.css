@@ -11,7 +11,8 @@
 }
 
 .canvas-container {
-	position: relative;
-	width: 100%;
+	position: fixed;
 	overflow: hidden;
+	height: 100dvh;
+	width: -webkit-fill-available;
 }

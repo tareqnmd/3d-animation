@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 
 const SphereFrame = () => {
-	const sphereRef: any = useRef();
+	const sphereRef: any = useRef(null);
 
 	useFrame(() => {
 		if (sphereRef.current) {

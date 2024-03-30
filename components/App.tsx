@@ -4,13 +4,13 @@ import Introduction from './Introduction';
 
 function App() {
 	return (
-		<div className="container">
-			<Introduction />
-			<div className="canvas-container h-screen">
-				<CanvasContainer />I
+		<>
+			<CanvasContainer />
+			<div className="container">
+				<Introduction />
+				<About />
 			</div>
-			<About />
-		</div>
+		</>
 	);
 }
 
