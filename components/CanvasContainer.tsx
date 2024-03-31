@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { Dog } from './models/Dog';
-import { Music } from './models/Music';
+import { CDModel } from './models/CDModel';
+import { DogModel } from './models/DogModel';
+import { MusicModel } from './models/MusicModel';
 
 const CanvasContainer = () => {
 	const [type, setType] = useState('');
@@ -28,9 +29,25 @@ const CanvasContainer = () => {
 						onChange={() => setType('music')}
 					/>
 				</div>
+				<div className="flex items-center gap-2">
+					<label htmlFor="apple-model">CD</label>
+					<input
+						name="model"
+						id="apple-model"
+						type="radio"
+						value="apple"
+						onChange={() => setType('apple')}
+					/>
+				</div>
 			</div>
 			<div className="app-canvas">
-				{type === 'music' ? <Music /> : type === 'dog' ? <Dog /> : null}
+				{type === 'music' ? (
+					<MusicModel />
+				) : type === 'dog' ? (
+					<DogModel />
+				) : type === 'apple' ? (
+					<CDModel />
+				) : null}
 			</div>
 		</>
 	);

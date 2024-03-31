@@ -22,7 +22,7 @@ function MeshComponent() {
 	);
 }
 
-export function Dog() {
+export function DogModel() {
 	return (
 		<div className="flex justify-center items-center h-screen">
 			<Canvas className="h-2xl w-2xl">
