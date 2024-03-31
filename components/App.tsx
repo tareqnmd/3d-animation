@@ -1,5 +1,6 @@
 import About from './About';
 import CanvasContainer from './CanvasContainer';
+import Contact from './Contact';
 import Introduction from './Introduction';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 			<div className="app-content container">
 				<Introduction />
 				<About />
+				<Contact />
 			</div>
 		</>
 	);
