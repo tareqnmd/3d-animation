@@ -1,25 +1,40 @@
 'use client';
-import { useGLTF } from '@react-three/drei';
-import { Canvas } from 'react-three-fiber';
 
-export function CDModel(props: any) {
-	const { nodes, materials }: any = useGLTF('model/cd/scene.gltf');
+import { OrbitControls } from '@react-three/drei';
+import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { useRef } from 'react';
+import { Mesh } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+
+function MeshComponent() {
+	const fileUrl = 'model/cd/scene.gltf';
+	const mesh = useRef<Mesh>(null!);
+	const gltf = useLoader(GLTFLoader, fileUrl);
+
+	useFrame(() => {
+		mesh.current.rotation.y += 0.01;
+		mesh.current.rotation.x += 0.01;
+		mesh.current.rotation.z += 0.01;
+	});
+
 	return (
-		<Canvas>
-			<group
-				{...props}
-				dispose={null}
-			>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.Object_2.geometry}
-					material={materials.CdMaterial}
-					rotation={[-Math.PI / 2, 0, 0]}
-				/>
-			</group>
-		</Canvas>
+		<mesh
+			ref={mesh}
+		>
+			<primitive object={gltf.scene} />
+		</mesh>
 	);
 }
 
-useGLTF.preload('model/cd/scene.gltf');
+export function CDModel() {
+	return (
+		<div className="flex justify-center items-center h-screen">
+			<Canvas className="h-2xl w-2xl">
+				<OrbitControls />
+				<ambientLight />
+				<pointLight position={[10, 10, 10]} />
+				<MeshComponent />
+			</Canvas>
+		</div>
+	);
+}
