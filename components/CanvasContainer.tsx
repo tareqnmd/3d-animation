@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { AppleModel } from './models/AppleModel';
 import { CDModel } from './models/CDModel';
 import { DogModel } from './models/DogModel';
 import { MusicModel } from './models/MusicModel';
@@ -30,7 +31,17 @@ const CanvasContainer = () => {
 					/>
 				</div>
 				<div className="flex items-center gap-2">
-					<label htmlFor="apple-model">CD</label>
+					<label htmlFor="cd-model">CD</label>
+					<input
+						name="model"
+						id="cd-model"
+						type="radio"
+						value="cd"
+						onChange={() => setType('cd')}
+					/>
+				</div>
+				<div className="flex items-center gap-2">
+					<label htmlFor="apple-model">Apple</label>
 					<input
 						name="model"
 						id="apple-model"
@@ -45,8 +56,10 @@ const CanvasContainer = () => {
 					<MusicModel />
 				) : type === 'dog' ? (
 					<DogModel />
-				) : type === 'apple' ? (
+				) : type === 'cd' ? (
 					<CDModel />
+				) : type === 'apple' ? (
+					<AppleModel />
 				) : null}
 			</div>
 		</>
