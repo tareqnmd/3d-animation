@@ -9,8 +9,8 @@ function App() {
 				<FullDiv bg="bg-[#003049]" />
 				<FullDiv bg="bg-[#3d348b]" />
 				<FullDiv bg="bg-[#f7b801]" />
-				<FullDiv bg="bg-[#f35b04]" />
-				<FullDiv bg="bg-[#2a9d8f]" />
+				<FullDiv bg="bg-[#eb5e28]" />
+				<FullDiv bg="bg-[#06d6a0]" />
 			</div>
 		</>
 	);
