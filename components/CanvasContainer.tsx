@@ -1,14 +1,38 @@
 'use client';
-import { Canvas } from 'react-three-fiber';
-import SphereFrame from './SphereFrame';
+import { useState } from 'react';
+import { Dog } from './models/Dog';
+import { Music } from './models/Music';
 
 const CanvasContainer = () => {
+	const [type, setType] = useState('');
 	return (
-		<div className="app-canvas">
-			<Canvas>
-				<SphereFrame />
-			</Canvas>
-		</div>
+		<>
+			<div className="flex items-center gap-4">
+				<div className="flex items-center gap-2">
+					<label htmlFor="dog-model">Dog</label>
+					<input
+						name="model"
+						id="dog-model"
+						type="radio"
+						value="dog"
+						onChange={() => setType('dog')}
+					/>
+				</div>
+				<div className="flex items-center gap-2">
+					<label htmlFor="music-model">Music</label>
+					<input
+						name="model"
+						id="music-model"
+						type="radio"
+						value="music"
+						onChange={() => setType('music')}
+					/>
+				</div>
+			</div>
+			<div className="app-canvas">
+				{type === 'music' ? <Music /> : type === 'dog' ? <Dog /> : null}
+			</div>
+		</>
 	);
 };
 
