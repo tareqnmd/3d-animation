@@ -6,20 +6,10 @@ import { DogModel } from './models/DogModel';
 import { MusicModel } from './models/MusicModel';
 
 const CanvasContainer = () => {
-	const [type, setType] = useState('');
+	const [type, setType] = useState('music');
 	return (
 		<>
-			<div className="flex items-center gap-4">
-				<div className="flex items-center gap-2">
-					<label htmlFor="dog-model">Dog</label>
-					<input
-						name="model"
-						id="dog-model"
-						type="radio"
-						value="dog"
-						onChange={() => setType('dog')}
-					/>
-				</div>
+			<div className="flex justify-center items-center gap-4 my-2">
 				<div className="flex items-center gap-2">
 					<label htmlFor="music-model">Music</label>
 					<input
@@ -27,7 +17,19 @@ const CanvasContainer = () => {
 						id="music-model"
 						type="radio"
 						value="music"
+						checked={type === 'music'}
 						onChange={() => setType('music')}
+					/>
+				</div>
+				<div className="flex items-center gap-2">
+					<label htmlFor="dog-model">Dog</label>
+					<input
+						name="model"
+						id="dog-model"
+						type="radio"
+						value="dog"
+						checked={type === 'dog'}
+						onChange={() => setType('dog')}
 					/>
 				</div>
 				<div className="flex items-center gap-2">
@@ -37,6 +39,7 @@ const CanvasContainer = () => {
 						id="cd-model"
 						type="radio"
 						value="cd"
+						checked={type === 'cd'}
 						onChange={() => setType('cd')}
 					/>
 				</div>
@@ -47,6 +50,7 @@ const CanvasContainer = () => {
 						id="apple-model"
 						type="radio"
 						value="apple"
+						checked={type === 'apple'}
 						onChange={() => setType('apple')}
 					/>
 				</div>

@@ -18,7 +18,7 @@ function MeshComponent() {
 	return (
 		<mesh
 			ref={mesh}
-			scale={[0.05, 0.05, 0.05]}
+			scale={[0.02, 0.02, 0.02]}
 		>
 			<primitive object={gltf.scene} />
 		</mesh>
