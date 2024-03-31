@@ -24,13 +24,11 @@ function MeshComponent() {
 
 export function DogModel() {
 	return (
-		<div className="flex justify-center items-center h-screen">
-			<Canvas className="h-2xl w-2xl">
-				<OrbitControls />
-				<ambientLight />
-				<pointLight position={[10, 10, 10]} />
-				<MeshComponent />
-			</Canvas>
-		</div>
+		<Canvas>
+			<OrbitControls />
+			<ambientLight />
+			<pointLight position={[10, 10, 10]} />
+			<MeshComponent />
+		</Canvas>
 	);
 }

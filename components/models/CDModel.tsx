@@ -18,9 +18,7 @@ function MeshComponent() {
 	});
 
 	return (
-		<mesh
-			ref={mesh}
-		>
+		<mesh ref={mesh}>
 			<primitive object={gltf.scene} />
 		</mesh>
 	);
@@ -28,13 +26,11 @@ function MeshComponent() {
 
 export function CDModel() {
 	return (
-		<div className="flex justify-center items-center h-screen">
-			<Canvas className="h-2xl w-2xl">
-				<OrbitControls />
-				<ambientLight />
-				<pointLight position={[10, 10, 10]} />
-				<MeshComponent />
-			</Canvas>
-		</div>
+		<Canvas>
+			<OrbitControls />
+			<ambientLight />
+			<pointLight position={[10, 10, 10]} />
+			<MeshComponent />
+		</Canvas>
 	);
 }
