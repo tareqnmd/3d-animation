@@ -21,7 +21,8 @@ const STLToGLTFConverter: React.FC = () => {
 					try {
 						const gltfBlob = await convertSTLtoGLTF(arrayBuffer);
 						console.log(gltfBlob);
-						downloadFile(gltfBlob);
+						const name = file.name.replace(/.stl/i, '.gltf') ?? '';
+						downloadFile(gltfBlob, name);
 					} catch (error) {
 						console.error(error);
 					}

@@ -47,11 +47,11 @@ export const convertSTLtoGLTF = (stlFile: ArrayBuffer): Promise<Blob> => {
 	});
 };
 
-export const downloadFile = (blob: Blob, name = 'model') => {
+export const downloadFile = (blob: Blob, name = 'model.gltf') => {
 	const url = URL.createObjectURL(blob);
 	const link = document.createElement('a');
 	link.href = url;
-	link.download = `${name}.gltf`;
+	link.download = name;
 	link.click();
 	URL.revokeObjectURL(url);
 };
