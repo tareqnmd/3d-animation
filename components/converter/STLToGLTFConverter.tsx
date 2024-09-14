@@ -34,7 +34,7 @@ const STLToGLTFConverter: React.FC = () => {
 	};
 
 	return (
-		<div>
+		<div className="h-200px bg-[#cecece] p-3 grid gap-4">
 			<input
 				type="file"
 				accept=".stl"
@@ -43,6 +43,7 @@ const STLToGLTFConverter: React.FC = () => {
 			<button
 				onClick={handleConvert}
 				disabled={!file}
+				className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
 			>
 				Convert to GLTF
 			</button>
