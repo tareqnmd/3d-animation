@@ -1,5 +1,5 @@
 'use client';
-import { convertSTLtoGLTF } from '@/lib/stl-gl';
+import { convertSTLtoGLTF, downloadFile } from '@/lib/stl-gl';
 import { useState } from 'react';
 
 const STLToGLTFConverter: React.FC = () => {
@@ -12,15 +12,22 @@ const STLToGLTFConverter: React.FC = () => {
 		}
 	};
 
-	const handleConvert = () => {
+	const handleConvert = async () => {
 		if (file) {
 			const reader = new FileReader();
-			reader.onload = (e: ProgressEvent<FileReader>) => {
+			reader.onload = async (e: ProgressEvent<FileReader>) => {
 				const arrayBuffer = e.target?.result;
 				if (arrayBuffer instanceof ArrayBuffer) {
-					convertSTLtoGLTF(arrayBuffer);
+					try {
+						const gltfBlob = await convertSTLtoGLTF(arrayBuffer);
+						console.log(gltfBlob);
+						downloadFile(gltfBlob);
+					} catch (error) {
+						console.error(error);
+					}
 				}
 			};
+
 			reader.readAsArrayBuffer(file);
 		}
 	};
