@@ -1,9 +1,11 @@
 import CanvasContainer from './CanvasContainer';
 import FullDiv from './FullDiv';
+import STLToGLTFConverter from './converter/STLToGLTFConverter';
 
 function App() {
 	return (
 		<>
+			<STLToGLTFConverter />
 			<CanvasContainer />
 			<div className="app-content">
 				<FullDiv bg="bg-[#003049]" />
