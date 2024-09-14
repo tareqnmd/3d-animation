@@ -1,10 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Models from './Models';
-import { AppleModel } from './models/AppleModel';
-import { CDModel } from './models/CDModel';
-import { DogModel } from './models/DogModel';
-import { MusicModel } from './models/MusicModel';
+import { EiffelSTL } from './models/stl-gl/EiffelSTL';
+import { EiffelGL } from './models/stl-gl/EiffelGL';
 
 const CanvasContainer = () => {
 	const [type, setType] = useState('music');
@@ -14,7 +12,9 @@ const CanvasContainer = () => {
 				type={type}
 				setType={setType}
 			/>
-			<div className="app-canvas">
+			<EiffelGL />
+			<EiffelSTL />
+			{/* <div className="app-canvas">
 				{type === 'music' ? (
 					<MusicModel />
 				) : type === 'dog' ? (
@@ -24,7 +24,7 @@ const CanvasContainer = () => {
 				) : type === 'apple' ? (
 					<AppleModel />
 				) : null}
-			</div>
+			</div> */}
 		</>
 	);
 };
